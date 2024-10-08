@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 1.2rem;
+  margin-top: 3rem;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.image-slider {
+  position: relative;
+  height: 250px;
+}
+
+.image-slider img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.share-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background-color: #fff;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.listing-card:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.listing-info,
+.skeleton-info {
+  padding-top: 1rem;
+}
+
+.listing-title {
+  font-size: 1.1rem;
+}
+
+.listing-host {
+  color: #717171;
+}
+
+.splide__arrow {
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+}
+
+.listing-card .splide__arrows {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.listing-card:hover .splide__arrows {
+  opacity: 1;
+  visibility: visible;
+}
+
+.splide__arrow svg {
+  fill: #171717;
+  font-size: 0.75rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.splide__arrow:hover svg {
+  fill: #000;
+}
+
+/* skeleton section */
+.skeleton-card {
+  background-color: #fff;
+  border-radius: 0.75rem;
+}
+
+.skeleton-image {
+  height: 250px;
+  border-radius: 1rem;
+  background-color: #e0e0e0;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-title,
+.skeleton-host,
+.skeleton-price {
+  height: 1rem;
+  border-radius: 0.5rem;
+  background-color: #e0e0e0;
+  margin-bottom: 0.5rem;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-title {
+  width: 70%;
+}
+
+.skeleton-host {
+  width: 50%;
+}
+
+.skeleton-price {
+  width: 30%;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Media query */
+@media (min-width: 768px) {
+  .listings,
+  .skeleton-loader {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .listings,
+  .skeleton-loader {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
